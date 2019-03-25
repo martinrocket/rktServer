@@ -11,7 +11,8 @@ import (
 func main() {
 	fmt.Println("rktStart web server starting @ http://localhost:8080/...")
 
-	http.HandleFunc("/", webServer.RktWebServer)
+	http.HandleFunc("/", webServer.RktStart)
+	http.HandleFunc("/intro", webServer.RktWebServer)
 	err := http.ListenAndServe(":8080", nil) // set listen port
 	if err != nil {
 		log.Fatal("ListenAndServe: ", err)

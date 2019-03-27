@@ -12,9 +12,9 @@ import (
 func main() {
 	fmt.Println("rktStart web server starting @ http://localhost:8080/...")
 
-	
+
 	router := http.NewServeMux()
-	router.HandleFunc("/hello", webServer.RktWebServer)
+	router.HandleFunc("/intro", webServer.RktWebServer)
 	router.HandleFunc("/", webServer.RktStart)
 
 

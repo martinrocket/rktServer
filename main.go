@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	//"time"
 
 	"github.com/martinrocket/rktServer/webServer"
 )
@@ -11,9 +12,14 @@ import (
 func main() {
 	fmt.Println("rktStart web server starting @ http://localhost:8080/...")
 
-	http.HandleFunc("/", webServer.RktStart)
-	http.HandleFunc("/intro", webServer.RktWebServer)
-	err := http.ListenAndServe(":8080", nil) // set listen port
+	
+	router := http.NewServeMux()
+	router.HandleFunc("/hello", webServer.RktWebServer)
+	router.HandleFunc("/", webServer.RktStart)
+
+
+
+	err := http.ListenAndServe(":8080", router) // set listen port
 	if err != nil {
 		log.Fatal("ListenAndServe: ", err)
 	}

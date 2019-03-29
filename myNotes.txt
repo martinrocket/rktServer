@@ -10,6 +10,15 @@ docker run --name martin -d -p 8080:8080 rkt-docker
 #This runs a bash command line with golang latest version loaded.
 docker run -it --entrypoint /bin/bash golang
 
+#This names an image with a tag
+docker tag be3e75bafb86 martinrocket/rkt-server-repo:rkt1.0
+
+#Login to Docker hub
+docker login
+
+#This pushes the tagged image to docker hub
+docker push martinrocket/rkt-server-repo:rkt1.0
+
 
 GIT
 This resets the files that have changed back to the origin master

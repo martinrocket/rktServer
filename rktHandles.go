@@ -8,7 +8,7 @@ import (
 )
 
 func routes() {
-	fmt.Println("rktStart web server starting @ http://localhost:8080/...")
+	fmt.Println("rktStart web server starting @ http://localhost:8080/intro")
 
 	r := http.NewServeMux()
 	r.HandleFunc("/api/", handleAPI)

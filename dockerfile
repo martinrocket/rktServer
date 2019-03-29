@@ -13,6 +13,4 @@ RUN go get -d -v ./...
 RUN go install -v ./...
 
 EXPOSE 8080
-CMD ["go", "run", "main.go"]
-#CMD ["go", "build", "."]
-#CMD ["./rktServer"]
+CMD ["go", "run", "main.go", "rktHandles.go"]

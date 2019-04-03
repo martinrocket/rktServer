@@ -19,10 +19,8 @@ type levelOne struct {
 func posMenu() {
 
 	m := menu{
-		menuName: "Menu Number One",
-		levelOne{
-			List:  []string("List 1"),
-			Close: "x"},
+		menuName: "Menu Number One"
+		menuName.levelOne.List: {}
 	}
 
 	n, err := json.MarshalIndent(m, "  ", "  ")

@@ -14,6 +14,7 @@ type Menu struct {
 	MenuGroup []MenuItems `json:"menu_group"`
 }
 
+//MenuItems gives a slice of items to Menu
 type MenuItems struct {
 	ID       int
 	MenuItem string
@@ -21,7 +22,7 @@ type MenuItems struct {
 
 func posMenu() {
 
-	m1 := &Menu{
+	m1 := Menu{
 		MenuName: "Menu April 2019",
 		Active:   true,
 		MenuGroup: []MenuItems{
@@ -35,12 +36,7 @@ func posMenu() {
 		},
 	}
 
-	m2 := &Menu{}
-	m2.MenuName = "Menu May 2019"
-	m2.Active = false
-
 	n, err := json.MarshalIndent(m1, "", "  ")
-	o, err := json.MarshalIndent(m2, "", "  ")
 
 	if err != nil {
 		log.Fatal(err)
@@ -48,11 +44,12 @@ func posMenu() {
 
 	os.Stdout.Write(n)
 	fmt.Println()
-	os.Stdout.Write(o)
+
 	for i := range m1.MenuGroup {
-		fmt.Printf("\n%v:", m1.MenuGroup[i].MenuItem)
+		fmt.Printf("\n%v: %v", m1.MenuGroup[i].ID, m1.MenuGroup[i].MenuItem)
 	}
 
 	fmt.Println()
+	fmt.Println(m1.MenuGroup[0])
 
 }

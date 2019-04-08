@@ -2,7 +2,6 @@ package main
 
 import (
 	"encoding/json"
-	"fmt"
 	"log"
 	"os"
 )
@@ -14,12 +13,14 @@ type Menu struct {
 	MenuGroups []MenuGroup
 }
 
+// MenuGroup is data model for menu group lists
 type MenuGroup struct {
 	ID        int    `json:"ID"`
 	Name      string `json:"menu_group_name`
 	MenuItems []MenuItem
 }
 
+// MenuItem is data model for menu item list
 type MenuItem struct {
 	ID       int    `json:"ID"`
 	MenuItem string `json:"MenuItem"`
@@ -31,20 +32,29 @@ func posMenu() {
 		MenuGroup{
 			1, "Daily Functions", []MenuItem{
 				MenuItem{
-					1, "Menu Item 1"}, {
-					2, "Menu Item 2"},
+					1, "Start of Day"}, {
+					2, "Count Safe"}, {
+					3, "Assign Drawers"}, {
+					4, "Prevous Day Clock Out Report"}, {
+					5, "Count Drawer"}, {
+					6, "Cash Drop to Safe"}, {
+					7, "Close Drawer"}, {
+					8, "End of Day"},
 			},
 		}, {
 			2, "Cashier Functions", []MenuItem{
 				MenuItem{
-					1, "Menu Item 1"}, {
-					2, "Menu Item 2"},
+					1, "Start Drawer Count"}, {
+					2, "End Drawer Count"}, {
+					3, "Drop Cash"}, {
+					4, "Clock Out"},
 			},
 		}, {
 			2, "Server Functions", []MenuItem{
 				MenuItem{
-					1, "Menu Item 1"}, {
-					2, "Menu Item 2"},
+					1, "Enter Tip"}, {
+					2, "Side Work List"}, {
+					3, "Clock Out"},
 			},
 		},
 	},
@@ -57,10 +67,5 @@ func posMenu() {
 	}
 
 	os.Stdout.Write(n)
-	fmt.Println()
-
-	/*for i := range m1.MenuGroup {
-		fmt.Printf("\n%v: %v", m1.MenuGroup[i].ID, m1.MenuGroup[i].MenuItem)
-	}*/
 
 }

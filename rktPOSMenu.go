@@ -9,31 +9,45 @@ import (
 
 //Menu is a struct of Menu Groups and is exported.
 type Menu struct {
-	MenuName  string `json:"menu_name"`
-	Active    bool
-	MenuGroup []MenuItems `json:"menu_group"`
+	MenuName   string `json:"menu_name"`
+	Active     bool   `json:"Active"`
+	MenuGroups []MenuGroup
 }
 
-//MenuItems gives a slice of items to Menu
-type MenuItems struct {
-	ID       int
-	MenuItem string
+type MenuGroup struct {
+	ID        int    `json:"ID"`
+	Name      string `json:"menu_group_name`
+	MenuItems []MenuItem
+}
+
+type MenuItem struct {
+	ID       int    `json:"ID"`
+	MenuItem string `json:"MenuItem"`
 }
 
 func posMenu() {
 
-	m1 := Menu{
-		MenuName: "Menu April 2019",
-		Active:   true,
-		MenuGroup: []MenuItems{
-			MenuItems{
-				ID:       1,
-				MenuItem: "Start of Day",
-			}, {
-				ID:       2,
-				MenuItem: "End of Day",
+	m1 := Menu{"Menu Main", true, []MenuGroup{
+		MenuGroup{
+			1, "Daily Functions", []MenuItem{
+				MenuItem{
+					1, "Menu Item 1"}, {
+					2, "Menu Item 2"},
+			},
+		}, {
+			2, "Cashier Functions", []MenuItem{
+				MenuItem{
+					1, "Menu Item 1"}, {
+					2, "Menu Item 2"},
+			},
+		}, {
+			2, "Server Functions", []MenuItem{
+				MenuItem{
+					1, "Menu Item 1"}, {
+					2, "Menu Item 2"},
 			},
 		},
+	},
 	}
 
 	n, err := json.MarshalIndent(m1, "", "  ")
@@ -45,11 +59,8 @@ func posMenu() {
 	os.Stdout.Write(n)
 	fmt.Println()
 
-	for i := range m1.MenuGroup {
+	/*for i := range m1.MenuGroup {
 		fmt.Printf("\n%v: %v", m1.MenuGroup[i].ID, m1.MenuGroup[i].MenuItem)
-	}
-
-	fmt.Println()
-	fmt.Println(m1.MenuGroup[0])
+	}*/
 
 }

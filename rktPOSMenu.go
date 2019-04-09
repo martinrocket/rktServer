@@ -26,7 +26,7 @@ type MenuItem struct {
 	MenuItem string `json:"MenuItem"`
 }
 
-func posMenu() []byte {
+func posMenu() ([]byte, []byte) {
 
 	m1 := Menu{"Menu Main", true, []MenuGroup{
 		MenuGroup{
@@ -61,12 +61,12 @@ func posMenu() []byte {
 	}
 
 	n, err := json.Marshal(m1)
-
+	nIndent, err := json.MarshalIndent(m1, "", "  ")
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	os.Stdout.Write(n)
-	return n
+	return n, nIndent
 
 }

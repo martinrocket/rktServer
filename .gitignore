@@ -13,3 +13,6 @@
 
 # Logs
 *.log
+
+# Ingnore my executable in Unix
+rktServer

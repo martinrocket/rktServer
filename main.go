@@ -6,6 +6,7 @@ import (
 	"os"
 	"os/exec"
 	"runtime"
+	"strconv"
 )
 
 var version = appInfo{"rktPOS", 0.1, 2019, runtime.GOOS}
@@ -14,7 +15,7 @@ func main() {
 	clear()
 	fmt.Println("Main function running...")
 	fmt.Printf("version call = %v %v %v %v\n", version.name, version.version, version.year, version.os)
-	ServerLog("version call = " + string(version.name) + " " + fmt.Sprintf("%f", version.version) + " " + string(version.year) + " " + version.os)
+	ServerLog("version call = " + string(version.name) + " " + fmt.Sprintf("%f", version.version) + " " + strconv.Itoa(version.year) + " " + version.os)
 	routes()
 
 }
@@ -40,5 +41,5 @@ func ServerLog(l string) {
 	defer f.Close()
 
 	log.SetOutput(f)
-	log.Println(l)
+	log.Printf(l + "\n")
 }

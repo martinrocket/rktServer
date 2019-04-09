@@ -24,10 +24,10 @@ func routes() {
 }
 
 func handleAPI(w http.ResponseWriter, r *http.Request) {
-	data := posMenu()
+	data, dataIndent := posMenu()
 
 	w.Write(data)
-	ServerLog(string(data))
+	ServerLog(string(dataIndent))
 }
 
 func handleAbout(w http.ResponseWriter, r *http.Request) {

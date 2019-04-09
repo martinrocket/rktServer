@@ -24,7 +24,10 @@ func routes() {
 }
 
 func handleAPI(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "you got the api")
+	data := posMenu()
+
+	w.Write(data)
+	ServerLog(string(data))
 }
 
 func handleAbout(w http.ResponseWriter, r *http.Request) {

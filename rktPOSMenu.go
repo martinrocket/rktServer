@@ -16,7 +16,7 @@ type Menu struct {
 // MenuGroup is data model for menu group lists
 type MenuGroup struct {
 	ID        int    `json:"ID"`
-	Name      string `json:"menu_group_name`
+	Name      string `json:"menu_group_name"`
 	MenuItems []MenuItem
 }
 

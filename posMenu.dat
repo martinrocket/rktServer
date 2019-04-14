@@ -1,0 +1,84 @@
+{
+  "menu_name": "Menu Main",
+  "Active": true,
+  "MenuGroups": [
+    {
+      "ID": 1,
+      "menu_group_name": "Daily Functions",
+      "MenuItems": [
+        {
+          "ID": 1,
+          "MenuItem": "Start of Day"
+        },
+        {
+          "ID": 2,
+          "MenuItem": "Count Safe"
+        },
+        {
+          "ID": 3,
+          "MenuItem": "Assign Drawers"
+        },
+        {
+          "ID": 4,
+          "MenuItem": "Prevous Day Clock Out Report"
+        },
+        {
+          "ID": 5,
+          "MenuItem": "Count Drawer"
+        },
+        {
+          "ID": 6,
+          "MenuItem": "Cash Drop to Safe"
+        },
+        {
+          "ID": 7,
+          "MenuItem": "Close Drawer"
+        },
+        {
+          "ID": 8,
+          "MenuItem": "End of Day"
+        }
+      ]
+    },
+    {
+      "ID": 2,
+      "menu_group_name": "Cashier Functions",
+      "MenuItems": [
+        {
+          "ID": 1,
+          "MenuItem": "Start Drawer Count"
+        },
+        {
+          "ID": 2,
+          "MenuItem": "End Drawer Count"
+        },
+        {
+          "ID": 3,
+          "MenuItem": "Drop Cash"
+        },
+        {
+          "ID": 4,
+          "MenuItem": "Clock Out"
+        }
+      ]
+    },
+    {
+      "ID": 3,
+      "menu_group_name": "Server Functions",
+      "MenuItems": [
+        {
+          "ID": 1,
+          "MenuItem": "Enter Tip"
+        },
+        {
+          "ID": 2,
+          "MenuItem": "Side Work List"
+        },
+        {
+          "ID": 3,
+          "MenuItem": "Clock Out"
+        }
+      ]
+    }
+  ]
+}

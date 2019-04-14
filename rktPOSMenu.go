@@ -66,7 +66,21 @@ func posMenu() ([]byte, []byte) {
 		log.Fatal(err)
 	}
 
-	os.Stdout.Write(n)
+	//os.Stdout.Write(n)
+
+	f, err := os.Create("posMenu.dat")
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	var dat Menu
+
+	if err := json.Unmarshal(n, &dat); err != nil {
+		panic(err)
+	}
+
+	f.Write(nIndent)
+	defer f.Close()
 	return n, nIndent
 
 }
